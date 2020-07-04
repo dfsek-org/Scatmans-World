@@ -1,0 +1,6 @@
+name: "ScatmansWorld"
+version: ba.bo.be
+author: "Scatman John"
+main: com.dfsek.scatmansworld.Main
+api-version: 1.15
+load: startup
