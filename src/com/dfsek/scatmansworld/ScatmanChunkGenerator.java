@@ -11,12 +11,12 @@ public class ScatmanChunkGenerator extends ChunkGenerator {
     @Override
     public ChunkData generateChunkData(World world, Random random, int chunkX, int chunkZ, BiomeGrid biome) {
         ChunkData chunk = createChunkData(world);
-        SimplexOctaveGenerator noise = new SimplexOctaveGenerator(world.getSeed(), 24);
-        SimplexOctaveGenerator canyonNoise = new SimplexOctaveGenerator(world.getSeed(), 8);
+        SimplexOctaveGenerator noise = new SimplexOctaveGenerator(world.getSeed(), 4);
+        SimplexOctaveGenerator canyonNoise = new SimplexOctaveGenerator(world.getSeed(), 4);
         noise.setScale(0.0125);
         canyonNoise.setScale(0.0075);
-        for (int x = 0; x < 16; x++) {
-            for (int z = 0; z < 16; z++) {
+        for(int x = 0; x < 16; x++) {
+            for(int z = 0; z < 16; z++) {
                 int h = (int) (((noise.noise(chunkX*16 + x, chunkZ * 16 + z, 0.5D, 0.5D, true)
                         + noise.noise((chunkX*16 + x)*2, (chunkZ * 16 + z)*2, 0.5D, 0.5D, true)*0.5
                         + noise.noise((chunkX*16 + x)*4, (chunkZ * 16 + z)*4, 0.5D, 0.5D, true)*0.25
@@ -30,7 +30,6 @@ public class ScatmanChunkGenerator extends ChunkGenerator {
                 }
             }
         }
-
         return chunk;
     }
 }
