@@ -28,8 +28,14 @@ public class ScatmanChunkGenerator extends ChunkGenerator {
                     else if(y > h-6 || (absNoise < 0.06 && absNoise > 0.04)) chunk.setBlock(x, y, z, Material.ORANGE_TERRACOTTA);
                     else chunk.setBlock(x, y, z, Material.STONE);
                 }
+                if(random.nextInt(100) < 50) chunk.setBlock(x,1,z,Material.BEDROCK);
+                if(random.nextInt(100) < 40) chunk.setBlock(x,2,z,Material.BEDROCK);
+                if(random.nextInt(100) < 30) chunk.setBlock(x,3,z,Material.BEDROCK);
+                if(random.nextInt(100) < 20) chunk.setBlock(x,4,z,Material.BEDROCK);
+                if(random.nextInt(100) < 10) chunk.setBlock(x,5,z,Material.BEDROCK);
             }
         }
+        chunk.setRegion(0, 0, 0, 16, 1, 16, Material.BEDROCK);
         return chunk;
     }
 }

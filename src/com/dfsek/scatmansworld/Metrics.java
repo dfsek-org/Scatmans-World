@@ -1,4 +1,4 @@
-package com.dfsek.betterend;
+package com.dfsek.scatmansworld;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
