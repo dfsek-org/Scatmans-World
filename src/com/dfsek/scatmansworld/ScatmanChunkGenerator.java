@@ -38,4 +38,12 @@ public class ScatmanChunkGenerator extends ChunkGenerator {
         chunk.setRegion(0, 0, 0, 16, 1, 16, Material.BEDROCK);
         return chunk;
     }
+    @Override
+    public boolean shouldGenerateCaves() {
+        return true;
+    }
+    @Override
+    public boolean shouldGenerateDecorations() {
+        return true;
+    }
 }
